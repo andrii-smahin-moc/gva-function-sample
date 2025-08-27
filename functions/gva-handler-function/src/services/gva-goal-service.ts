@@ -38,6 +38,7 @@ export class GVAGoalService extends BaseGVAGoalService {
         return this.buildHandlerResultPayload({
           customJourneyContext: { STEP: null },
           isFinalStep: true,
+          responseData: { number: enteredText },
           responseId: this.config.gvaGoals.validNumberGoalId,
         });
       }
