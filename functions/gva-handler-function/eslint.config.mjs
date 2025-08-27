@@ -14,6 +14,10 @@ import { typescriptRecommendedEslint } from './.eslintrc-rules/typescript-recomm
 import { unicornEslint } from './.eslintrc-rules/unicorn.eslint.mjs';
 
 export default [
+  {
+    ignores: ['eslint.config.*', 'vitest.config.*', 'tsup.config.*'],
+  },
+
   ...tseslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
 
@@ -36,10 +40,7 @@ export default [
       ...securityEslint.plugins,
     },
     rules: {
-      // Airbnb rules
       ...airbnbBase.rules,
-
-      // Custom sets (each file has only its rules)
       ...customRules,
       ...orderedImportsEslint.rules,
       ...perfectionistEslint.rules,
