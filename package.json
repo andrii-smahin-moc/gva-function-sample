@@ -1,0 +1,39 @@
+{
+  "name": "gva-sample-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FDMS-Glia/gva-function-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FDMS-Glia/gva-function-sample/issues"
+  },
+  "homepage": "https://github.com/FDMS-Glia/gva-function-sample#readme",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.13.0",
+    "@types/node": "^22.8.1",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "eslint-plugin-project-structure": "^3.13.3",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unicorn": "^50.0.1",
+    "prettier": "^3.5.3",
+    "type-fest": "^4.30.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.12.0"
+  }
+}

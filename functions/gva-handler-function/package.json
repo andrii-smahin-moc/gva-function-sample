@@ -4,14 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsup && mv ./dist/function.js ./function-out.js",
+    "build": "tsup && mv ./dist/function.js ./$npm_package_name.js",
     "dev": "wrangler dev --port=3000 --inspector-port=9229",
     "format": "prettier --write --log-level=warn '**/*.ts' && eslint --cache --fix ./src",
     "test": "vitest run",
     "coverage": "vitest --config vitest.coverage.config.ts run --coverage && node generate-coverage-badge.js",
     "lint": "eslint --cache ./src && prettier --check '**/*.ts'",
     "generate-types": "wrangler types",
-    "typecheck": "npx tsc --noEmit"
+    "typecheck": "npx tsc --noEmit",
+    "postinstall": "cd ../.. && npm install --no-audit --no-fund || true"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.8.56",
