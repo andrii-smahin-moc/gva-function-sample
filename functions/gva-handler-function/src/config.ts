@@ -29,6 +29,22 @@ export function validateConfig(environment: Record<string, unknown>): Validation
         userApiKey: validationResult.output.GLIA_USER_API_KEY,
         userApiKeySecret: validationResult.output.GLIA_USER_API_KEY_SECRET,
       },
+      gliaAI: {
+        detectConfidence: Number(validationResult.output.PROMPT_DETECT_CONFIDENCE),
+        detectOptionPrompt: validationResult.output.PROMPT_OPTION_DETECTOR,
+        maxTokens: Number(validationResult.output.GLIA_AI_MAX_TOKENS),
+        stopSequences: (() => {
+          const raw = validationResult.output.GLIA_AI_STOP_SEQUENCES;
+          if (!raw) {
+            return [];
+          }
+          return raw
+            .split(',')
+            .map((s) => s.trim())
+            .filter((s) => s.length > 0);
+        })(),
+        temperature: Number(validationResult.output.GLIA_AI_TEMPERATURE),
+      },
       gvaGoals: {
         askNumberGoalId: validationResult.output.ASK_NUMBER_GOAL,
         reAskNumberGoalId: validationResult.output.RE_ASK_NUMBER_GOAL,
